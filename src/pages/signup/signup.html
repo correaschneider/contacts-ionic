@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Signup
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+  <form id="signup-form2">
+    <ion-list id="signup-list2">
+      <ion-item id="signup-input3">
+        <ion-label color="{{ form_error.name ? 'danger' : '' }}">
+          Name
+        </ion-label>
+        <ion-input type="text" name="Name" [(ngModel)]="user.name" placeholder="John Teller"></ion-input>
+      </ion-item>
+      <ion-item id="signup-input4">
+        <ion-label color="{{ form_error.email ? 'danger' : '' }}">
+          Email
+        </ion-label>
+        <ion-input type="email" name="Email" [(ngModel)]="user.email" placeholder="email@host.com"></ion-input>
+      </ion-item>
+      <ion-item id="signup-input5">
+        <ion-label color="{{ form_error.password ? 'danger' : '' }}">
+          Password
+        </ion-label>
+        <ion-input type="password" name="Password" [(ngModel)]="user.password" placeholder="123456"></ion-input>
+      </ion-item>
+      <ion-item id="login-toggle1">
+        <ion-label>
+          Remember Me
+        </ion-label>
+        <ion-toggle color="positive" name="RememberMe" [(ngModel)]="user.remember_me"></ion-toggle>
+      </ion-item>
+    </ion-list>
+    <button id="signup-button3" ion-button color="positive" block (click)="createUser()">
+      Sign up
+    </button>
+  </form>
+</ion-content>

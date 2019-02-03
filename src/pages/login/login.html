@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page2">
+  <form id="login-form1">
+    <ion-list id="login-list1">
+      <ion-item id="login-input1">
+        <ion-label color="{{ form_error.login ? 'danger' : '' }}">
+          Email
+        </ion-label>
+        <ion-input type="email" placeholder="email@host.com" name="Email" [(ngModel)]="login" ></ion-input>
+      </ion-item>
+      <ion-item id="login-input2">
+        <ion-label color="{{ form_error.password ? 'danger' : '' }}">
+          Password
+        </ion-label>
+        <ion-input type="password" placeholder="123456" name="Password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <ion-item id="login-toggle1">
+        <ion-label>
+          Remember Me
+        </ion-label>
+        <ion-toggle color="positive" name="RememberMe" [(ngModel)]="remember_me"></ion-toggle>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="height:40px;" id="login-spacer1"></div>
+    <button id="login-button1" ion-button color="positive" block (click)="doLogin()">
+      Log in
+    </button>
+    <button id="login-button2" ion-button clear color="positive" block (click)="goToSignup()">
+      Or create an account
+    </button>
+  </form>
+</ion-content>

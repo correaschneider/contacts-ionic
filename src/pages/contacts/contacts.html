@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="goToConfiguration()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Contacts
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goToContact()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page1">
+  <ion-list id="contacts-list6">
+    <ion-searchbar placeholder="Search" name="Search" (keyup)="search()" [(ngModel)]="term"></ion-searchbar>
+    <ion-item color="none" (click)="goToContact(contact.email)" *ngFor="let contact of contacts; let i = index">
+      <h2>
+        {{ contact.name }}
+      </h2>
+      <p>{{ contact.email }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Configuration
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="delete()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">
+  <form id="configuration-form5">
+    <ion-item id="configuration-input13">
+      <ion-label color="{{ form_error.name ? 'danger' : '' }}">
+        Name
+      </ion-label>
+      <ion-input type="text" placeholder="Name" name="Name" [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+    <ion-item id="configuration-input18">
+      <ion-label color="{{ form_error.email ? 'danger' : '' }}">
+        Email
+      </ion-label>
+      <ion-input type="email" placeholder="Email" name="Email" [(ngModel)]="user.email" readonly></ion-input>
+    </ion-item>
+    <ion-item id="configuration-input19">
+      <ion-label color="{{ form_error.password ? 'danger' : '' }}">
+        Password
+      </ion-label>
+      <ion-input type="password" placeholder="Password" name="Password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+  </form>
+  <button id="configuration-button8" ion-button color="positive" block (click)="save()">
+    Save
+  </button>
+  <button id="configuration-button9" ion-button color="calm" block (click)="logout()">
+    Logout
+  </button>
+</ion-content>

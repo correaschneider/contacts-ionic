@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contact
+    </ion-title>
+    <ion-buttons end *ngIf="index != null">
+      <button ion-button icon-only (click)="delete()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page4">
+  <form id="contact-form4">
+    <ion-item id="contact-input8">
+      <ion-label color="{{ form_error.name ? 'danger' : '' }}">
+        Name
+      </ion-label>
+      <ion-input type="text" name="Name" [(ngModel)]="contact.name" placeholder="Name"></ion-input>
+    </ion-item>
+    <ion-item id="contact-input9">
+      <ion-label color="{{ form_error.email ? 'danger' : '' }}">
+        Email
+      </ion-label>
+      <ion-input type="text" name="Email" [(ngModel)]="contact.email" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item id="contact-input10">
+      <ion-label color="{{ form_error.phone ? 'danger' : '' }}">
+        Phone
+      </ion-label>
+      <ion-input type="tel" name="Phone" [(ngModel)]="contact.phone" placeholder="Phone"></ion-input>
+    </ion-item>
+    <ion-item id="contact-input11">
+      <ion-label color="{{ form_error.cel_phone ? 'danger' : '' }}">
+        Cel Phone
+      </ion-label>
+      <ion-input type="tel" name="Cel Phone" [(ngModel)]="contact.cel_phone" placeholder="Cel Phone"></ion-input>
+    </ion-item>
+  </form>
+  <button id="contact-button6" ion-button color="positive" block on-click="save()">
+    Save
+  </button>
+</ion-content>

@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+    contacts:
+      image: beevelop/ionic:latest
+      volumes:
+        - ./src/contacts:/app
+        - ./src/contacts/node_modules:/app/node_modules
+      ports:
+        - 8100:8100
+        - 35729:35729
+        - 53703:53703
+      command: bash -c "cd /app; ionic serve -l"
